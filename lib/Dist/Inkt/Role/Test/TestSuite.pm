@@ -29,7 +29,7 @@ my $_test_suite_via_prove = sub
 	local $ENV{EXTENDED_TESTING} = 1;
 	require App::Prove;
 	my $app = App::Prove->new;
-	$app->process_args(qw( -Iinc -Ilib -r t xt ));
+	$app->process_args(qw( -Iinc -Ilib -r ), grep -d, qw( t xt ));
 	$app->run;
 };
 
